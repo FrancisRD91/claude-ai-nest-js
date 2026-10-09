@@ -250,10 +250,6 @@ it('expires reservations after 15 minutes', () => {
 });
 ```
 
-## CommonJS Projects (Jest)
-
-CommonJS projects created by the Nest CLI default to Jest (`ts-jest`). Jest can load the ESM-only NestJS 12 packages only on Node.js >= 24.9. Keep one runner per project; the patterns above translate 1:1 (`vi.fn()` -> `jest.fn()`).
-
 ## Quick Reference
 
 | Need | Use |

@@ -43,6 +43,16 @@ claude
 │       │   └── SKILL.md
 │       ├── design-patterns
 │       │   └── SKILL.md
+│       ├── hexagonal-architecture
+│       │   ├── SKILL.md
+│       │   └── references
+│       │       ├── adapters.md
+│       │       ├── consistency.md
+│       │       ├── enforcement.md
+│       │       ├── orchestration.md
+│       │       ├── pitfalls.md
+│       │       ├── shared-kernel.md
+│       │       └── testing.md
 │       ├── logging-patterns
 │       │   └── SKILL.md
 │       ├── nestjs
@@ -65,7 +75,7 @@ claude
 
 - **CLAUDE.md** - workflow rules and project conventions Claude follows on every task
 - **agents** - specialized sub-agents (NestJS implementation, code review, security, Docker, Kubernetes, DevOps)
-- **skills** - on-demand knowledge for NestJS, TypeORM, logging, code quality and design patterns
+- **skills** - on-demand knowledge for NestJS, hexagonal architecture, TypeORM, logging, code quality and design patterns
 - **package.json** - project name and version seed; Claude extends it when generating the app
 
 ## Credits

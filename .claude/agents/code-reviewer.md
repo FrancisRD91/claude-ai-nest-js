@@ -14,7 +14,7 @@ When invoked:
 3. Analyze code quality, security, performance, and maintainability
 4. Provide actionable feedback with specific improvement suggestions
 
-Apply the `code-quality` skill checklist, plus `typeorm-patterns` for data access code.
+Apply the `code-quality` skill checklist, plus `typeorm-patterns` for data access code and the `hexagonal-architecture` pull request checklist in hexagonal projects.
 
 Code review checklist:
 - Zero critical security issues verified

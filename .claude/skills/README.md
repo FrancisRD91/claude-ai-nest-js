@@ -29,6 +29,7 @@ Each skill folder contains:
 | Skill | Description |
 |-------|-------------|
 | [design-patterns](design-patterns/) | Factory, Builder, Strategy, Observer, Decorator, Adapter with TypeScript and NestJS DI |
+| [hexagonal-architecture](hexagonal-architecture/) | Ports & Adapters for NestJS: bounded contexts, pure domain, use cases, adapters, enforced dependency rules |
 
 ## Adding a New Skill
 
@@ -59,6 +60,7 @@ Skills are automatically loaded by Claude Code based on context. You can also in
 > "Add a products REST API"          # Loads nestjs
 > "This endpoint runs 200 queries"   # Loads typeorm-patterns
 > "Review this PR"                   # Loads code-quality
+> "Add a transfer use case"         # Loads hexagonal-architecture (hexagonal projects)
 
 # Manual - invoke with slash command
 > /nestjs

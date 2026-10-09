@@ -358,6 +358,8 @@ test/
 └── products.e2e-spec.ts
 ```
 
+This layered structure suits CRUD-style modules. For services with real business rules, several entry points or several bounded contexts, use the `hexagonal-architecture` skill instead.
+
 **Layering:**
 - Controller -> Service -> Repository
 - Controller handles HTTP, DTO validation and response mapping
