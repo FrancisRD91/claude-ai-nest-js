@@ -24,6 +24,16 @@ Kubernetes mastery checklist:
 - Network policies implemented effectively
 - Disaster recovery tested regularly
 
+NestJS workloads:
+- livenessProbe on `/health/live`, readinessProbe on `/health/ready` (Terminus, includes DB ping)
+- startupProbe for slow boots instead of long liveness delays
+- `app.enableShutdownHooks()` + `preStop` sleep (5-10s) + `terminationGracePeriodSeconds` >= 30
+- One Node.js process per pod; scale with replicas, not cluster mode
+- `--max-old-space-size` around 75% of the container memory limit
+- Configuration from ConfigMaps/Secrets as env vars, validated at boot by `ConfigModule`
+- Database migrations as a Job or init container, not on every replica start
+- HPA on CPU plus request latency or event-loop lag metrics
+
 Cluster architecture:
 - Control plane design
 - Multi-master setup
@@ -276,12 +286,8 @@ Best practices:
 
 Integration with other agents:
 - Support devops-engineer with container orchestration
-- Collaborate with cloud-architect on cloud-native design
-- Work with security-engineer on container security
-- Guide platform-engineer on Kubernetes platforms
-- Help sre-engineer with reliability patterns
-- Assist deployment-engineer with K8s deployments
-- Partner with network-engineer on cluster networking
-- Coordinate with terraform-engineer on K8s provisioning
+- Work with security-engineer on container and cluster security
+- Partner with docker-expert on image size and runtime hardening
+- Coordinate with nestjs-engineer on health probes, graceful shutdown and configuration
 
 Always prioritize security, reliability, and efficiency while building Kubernetes platforms that scale seamlessly and operate reliably.

@@ -27,15 +27,18 @@
 
 ## Project General Instructions
 
-- Always use the latest versions of dependencies.
-- Always write Java code as the Spring Boot application.
-- Always use Maven for dependency management.
-- Always create test cases for the generated code both positive and negative.
-- Always generate the CircleCI pipeline in the .circleci directory to verify the code.
+- Always use the latest stable versions of dependencies (check with `npm view <package> version`).
+- Always write the application in TypeScript (`strict` mode) as a NestJS application.
+- Always use npm for dependency management and commit `package-lock.json`. Use `npm ci` in CI and Docker builds.
+- Use ES modules (the NestJS 12 default): `"type": "module"` in package.json, `"module": "nodenext"` in tsconfig, and `.js` extensions on relative imports.
+- Target the current Node.js Active LTS release and declare it in `engines.node`.
+- Always create test cases for the generated code both positive and negative (Vitest unit tests and supertest e2e tests).
+- Always generate the CircleCI pipeline in the .circleci directory to verify the code (lint, build, unit and e2e tests).
 - Minimize the amount of code generated.
-- The Maven artifact name must be the same as the parent directory name.
-- Use semantic versioning for the Maven project. Each time you generate a new version, bump the PATCH section of the version number.
-- Use `pl.piomin.services` as the group ID for the Maven project and base Java package.
-- Do not use the Lombok library.
+- The `name` field in package.json must be the same as the parent directory name.
+- Use semantic versioning in package.json. Each time you generate a new version, bump the PATCH section of the version number.
+- Organize code in feature modules under `src/` (one folder per module, e.g. `src/products/`).
+- Use TypeORM for relational data access. Never enable `synchronize` outside tests; manage schema changes with migrations.
+- Do not use `any`. Prefer precise types, and `unknown` with narrowing when the type is truly unknown.
 - Generate the Docker Compose file to run all components used by the application.
 - Update README.md each time you generate a new version.

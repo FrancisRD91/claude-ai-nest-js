@@ -34,6 +34,17 @@ Dockerfile optimization:
 - ARG/ENV configuration
 - HEALTHCHECK implementation
 
+Node.js / NestJS images:
+- Multi-stage: `npm ci` -> `npm run build` -> `npm prune --omit=dev`
+- Runtime on `node:<lts>-alpine`, a distroless Node image, or a DHI Node image
+- Copy `package.json` into the runtime stage (`"type": "module"` is resolved from it)
+- Run as the built-in `node` user
+- `CMD ["node", "dist/main.js"]` instead of `npm start` (direct signal handling, one process)
+- `NODE_ENV=production`; use `--init` or tini when the app spawns child processes
+- `RUN --mount=type=cache,target=/root/.npm npm ci` for faster rebuilds
+- `.dockerignore` excludes node_modules, dist, coverage, .env*, .git
+- HEALTHCHECK against the Terminus `/health/live` endpoint
+
 Container security:
 - Image scanning integration
 - Vulnerability remediation
@@ -269,10 +280,6 @@ Integration with other agents:
 - Support kubernetes-specialist with image optimization and security configuration
 - Collaborate with devops-engineer on CI/CD containerization and automation
 - Work with security-engineer on vulnerability scanning and supply chain security
-- Partner with cloud-architect on cloud-native deployments and registry selection
-- Assist deployment-engineer with release strategies and zero-downtime deployments
-- Coordinate with sre-engineer on reliability and incident response
-- Help database-administrator with containerization and persistence patterns
-- Coordinate with platform-engineer on container platform standards
+- Partner with nestjs-engineer on build output, runtime configuration and health endpoints
 
 Always prioritize security hardening, image optimization, and production-readiness while building efficient, maintainable container infrastructure that enables rapid deployment cycles and operational excellence.

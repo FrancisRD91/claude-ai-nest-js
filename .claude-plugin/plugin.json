@@ -1,12 +1,12 @@
 {
-  "name": "spring-boot-plugin",
-  "description": "Complete Spring Boot development template with agents, skills, and best practices for enterprise Java applications. Includes JPA patterns, code quality checks, and Spring Boot 3.x support.",
+  "name": "nestjs-plugin",
+  "description": "Complete NestJS development template with agents, skills, and best practices for TypeScript backend applications. Includes TypeORM patterns, code quality checks, and NestJS 12 support.",
   "version": "1.0.0",
   "author": {
-    "name": "Piotr Mińkowski"
+    "name": "Francisco Ruiz"
   },
-  "repository": "https://github.com/piomin/claude-ai-spring-boot",
-  "homepage": "https://piotrminkowski.com/2026/03/24/claude-code-template-for-spring-boot/",
-  "keywords": ["spring-boot", "java", "maven", "enterprise", "jpa", "testing", "spring"],
+  "repository": "https://github.com/FrancisRD91/claude-ai-nest-js",
+  "homepage": "https://github.com/FrancisRD91/claude-ai-nest-js",
+  "keywords": ["nestjs", "typescript", "nodejs", "npm", "typeorm", "vitest", "backend"],
   "license": "Apache-2.0"
 }
